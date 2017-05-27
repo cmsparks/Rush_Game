@@ -57,6 +57,7 @@ function showOverlay(num) {
 		document.getElementById("overlay").style.background = "linear-gradient( to bottom right,rgba(63,81,181,1) 0%, rgba(171,71,188 ,1) 70%)"
 	}
 	document.getElementById("overlay").style.width="100%";
+	document.getElementById("overlayContainer").innerHTML = "Loading . . ."
 }
 
 function getParameterByName(name, url) {

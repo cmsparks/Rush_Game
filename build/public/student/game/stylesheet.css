@@ -7,7 +7,14 @@ html, body {
 	margin:0 0 0 0;
 	padding: 0 0 0 0;
 }
-
+#overlayContainer {
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-family: 'Play',sans-serif;
+	font-size: 30pt;
+	color:white;
+}
 #overlay {
 	width:0;
 	height:100%;
