@@ -1,2 +1,3 @@
 # Rush_Game
-Kahoot 
+
+Make your students excited with Rush!

@@ -1,7 +1,7 @@
 {
   "name": "rush",
   "version": "1.0.0",
-  "description": "",
+  "description": "Make your students excited with Rush!",
   "main": "index.js",
   "scripts": {
     "test": "gulp"
@@ -12,7 +12,6 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.4.0",
     "gulp-coffee": "^2.3.4",
-    "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
@@ -21,6 +20,15 @@
   "dependencies": {
     "compression": "^1.6.2",
     "express": "^4.15.3",
-    "helmet": "^3.6.1"
-  }
+    "helmet": "^3.6.1",
+    "socket.io": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmsparks/Rush_Game.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cmsparks/Rush_Game/issues"
+  },
+  "homepage": "https://github.com/cmsparks/Rush_Game#readme"
 }
