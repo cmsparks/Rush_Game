@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-	    <title>Kahoot Clone</title>
+	    <title>Rush!</title>
 	    <link rel="stylesheet" href="stylesheet.css">
 	    <script type="text/javascript" src="javascript.js" ></script>
 	</head>
-	<body>
+	<body onload="init()">
 		<div id="overlay">
 			<div class="canvas canvas4">
     			<div class="spinner4"><p class="center"></p></div>   
@@ -22,7 +22,13 @@
 		</div>
 		<div class="q-container">
 			<div class="question">
-				<div id="quesFooter"></div>
+				<div id="quesFooter">
+					<div class="place"></div>
+					<div class="gameInfo">
+						<div id="pin">Pin: <span id="currPin"></span></div>
+						<div id="name">Name: <span id="currName"></span></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>

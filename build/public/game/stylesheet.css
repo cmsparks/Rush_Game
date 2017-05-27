@@ -17,15 +17,20 @@ html, body {
 	transition: .5s;
 	display: table;
 }
-.quesFooter {
-	top:80%;
+#quesFooter {
+	position:absolute;
+	margin: auto;
+	bottom: 0;
 	width:100%;
 	height:12%;
-	border-top: 10px solid #000;
-	background-color: blue;
+	border-top: 1px solid #000;
+	background-color: lightgrey;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
 }
 
 .question {
+	position: relative;
 	background-color: white;
 	margin: 5% 5% 5% 5%;
 	height: 90%;

@@ -1,5 +1,11 @@
-function connectToServer(pin, nme) {
+
+function init() {
 	
+}
+
+function connectToServer(pin, nme) {
+	document.getElementById("currPin").innerHTML = pin;
+	document.getElementById("currName").innerHTML = nme;
 }
 
 function selectQues(num) {
