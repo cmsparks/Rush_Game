@@ -14,19 +14,22 @@
 		</div>
 		<div class="container2">
 			<div class="container">
-				<div class="orange ques" id="orange" onclick="selectQues(1)"><p class="center">Answer 1</p></div>
-				<div class="blue ques" id="blue" onclick="selectQues(2)"><p class="center">Answer 2</p></div>
-				<div class="green ques" id="green" onclick="selectQues(3)"><p class="center">Answer 3</p></div>
-				<div class="purple ques" id="purple" onclick="selectQues(4)"><p class="center">Answer 4</p></div>
+				<div class="orange ques" id="orange" onclick="selectQues(1)"><p id="ques1" class="center">Answer 1</p></div>
+				<div class="blue ques" id="blue" onclick="selectQues(2)"><p id="ques2" class="center">Answer 2</p></div>
+				<div class="green ques" id="green" onclick="selectQues(3)"><p id="ques3" class="center">Answer 3</p></div>
+				<div class="purple ques" id="purple" onclick="selectQues(4)"><p id="ques4" class="center">Answer 4</p></div>
 			</div>
 		</div>
 		<div class="q-container">
 			<div class="question">
+				<div id="currQues"></div>
 				<div id="quesFooter">
-					<div class="place"></div>
 					<div class="gameInfo">
 						<div id="pin">Pin: <span id="currPin"></span></div>
 						<div id="name">Name: <span id="currName"></span></div>
+					</div>
+					<div class="place">
+						<span id="currPlace">#1</span>
 					</div>
 				</div>
 			</div>
