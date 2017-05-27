@@ -1,12 +1,13 @@
-express = require('express')
-helmet = require('helmet')
-compression = require('compression')
-http = require('http')
-server = http.Server(app)
+helmet = require 'helmet'
+compression = require 'compression'
+express = require 'express'
+http = require 'http'
+
 app = express()
+server = app.listen process.env.PORT or 3000
+io = require('socket.io') server
 
-app.listen(3000)
 
-app.use(helmet())
-app.use(compression())
-app.use(express.static('public'))
+app.use helmet()
+app.use compression()
+app.use express.static 'build/public'
