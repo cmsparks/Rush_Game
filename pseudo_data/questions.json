@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "name": "What is a man?",
+      "choices": [
+        "a creature",
+        "a woman",
+        "a pinapple",
+        "rollsy"
+      ],
+      "correct": [
+        "a creature"
+      ]
+    },
+    {
+      "name": "question",
+      "choices": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct": [
+        "a"
+      ]
+    }
+  ]
+}
