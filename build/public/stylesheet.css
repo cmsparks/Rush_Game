@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Play');
+html {
+  height: 100%;
+  width:100%;
+}
 body {
   font-family: 'Play', sans-serif;
+  margin: 0 0 0 0;
+  height: 100%;
+  width: 100%;
 }
 
 .background {
-  background: linear-gradient( to top right, rgba(255,222,0,1) 0%, rgba(141,229,47 ,1) 100%);
+  background: linear-gradient( to top right, rgba(72,25,179,1) 0%, rgba(0,67,119,1) 100%);
   width:100%;
   height:100%;
+  margin: 0 0 0 0;
 }
 
 form {
@@ -20,7 +28,7 @@ label {
   text-align: center;
 }
 label .label-text {
-  color: #9B9B9B;
+  color: #ddd;
   cursor: text;
   font-size: 20px;
   line-height: 20px;
@@ -34,7 +42,7 @@ label .label-text {
 label input {
   background-color: transparent;
   border: 0;
-  border-bottom: 2px solid #4A4A4A;
+  border-bottom: 2px solid #eee;
   color: white;
   font-size: 36px;
   letter-spacing: -1px;
@@ -49,7 +57,7 @@ label input:focus {
   width: 400px;
 }
 label input:focus + .label-text {
-  color: #F0F0F0;
+  color: #fff;
   font-size: 13px;
   -moz-transform: translateY(-74px);
   -ms-transform: translateY(-74px);
@@ -65,7 +73,7 @@ label input:valid + .label-text {
 }
 
 button {
-  background-color: #333333;
+  background-color: rgba(0,0,0,0);
   border: 2px solid white;
   border-radius: 27px;
   color: white;
