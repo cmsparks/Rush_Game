@@ -24,5 +24,9 @@ io.on 'connection', (socket) ->
   socket.on 'questions', (questions_) ->
     questions = questions_
     stage = 'players'
+  
   socket.on 'player', (player) ->
     players.push(player)
+  
+  socket.on 'start', ->
+    stage = 'game'
