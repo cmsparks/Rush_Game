@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Question Creator</title>
+		<script src="questionCreatorJS.js" type="text/javascript"></script>
+	</head>
+	<style>
+		*{
+			text-align: center;
+			font-family: georgia;
+			color: white;
+			background-color: black;
+		}
+	</style>
+
+	<body>
+		<h2>WELCOME!</h2>
+		<h1>Question Creator</h1>
+		<h3>Directions:</h3>
+		<p> Please type in your question and four possible answers. The first answer should be the correct answer.</p>
+		<br>
+		<div id="newQuestionHere">
+		<br>
+		<form id="form">Question 1: <input type="text" name="challenge1" placeholder = "Question"> 
+		<br>
+		<br>
+		Answer 1: <input type = "text" name="1ans1" placeholder = "Answer one">
+		Answer 2: <input type = "text" name="1ans2" placeholder = "Answer two">
+		<br>
+		<br>
+		Answer 3: <input type = "text" name="1ans3" placeholder = "Answer three">
+		Answer 4: <input type = "text" name="1ans4" placeholder = "Answer four">
+		<br>
+		<br>
+		</div>
+		<input type = "button" value = "Create new question" onClick ="newQues();">
+		<br>
+		<br>
+
+		<input type = "submit" value = "Submit" onClick="finish();">
+		</form>
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		$(function () {
+			$('#form').on('button', function(evt) {
+				evt.preventDefault();
+				console.log(1, evt)
+				return false;
+			})
+		})
+	</script>
+	</body>
+</html>
