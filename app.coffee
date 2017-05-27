@@ -9,24 +9,21 @@ io = require('socket.io') server
 
 questions = undefined
 players = []
-stage = 'questions'
 
 app.use helmet()
 app.use compression()
-app.get '/', (req, res, next) ->
-  if stage == 'game'
-    res.redirect('/game/')
-  else
-    next()
+app.get '/', (req, res) ->
+  res.redirect(303, 'student/login')
 app.use express.static 'build/public'
 
 io.on 'connection', (socket) ->
   socket.on 'questions', (questions_) ->
     questions = questions_
-    stage = 'players'
-  
+    console.log('questions')
+
   socket.on 'player', (player) ->
     players.push(player)
-  
+
   socket.on 'start', ->
-    stage = 'game'
+    console.log('start')
+    socket.emit 'start'
