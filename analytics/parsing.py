@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 data_file = open('pseudo_data/players.json')
 data = json.load(data_file)
 data = data["data"]
+
 user_number = len(data)
 numquestions=10
 user_names = []
@@ -31,8 +32,15 @@ def userplot(user_place):
 		x_list.append(i)
 
 	plt.scatter(x_list, responselist)
-	plt.plot(x_list, responselist, 'r-', label='{a}s score'.format(a=name))
-	plt.show()
+	plt.plot(x_list, responselist, 'r-')
+	plt.xticks(list(range(1, numquestions)))
+	plt.ylim(-0.25, 1.25)
+	plt.yticks([0,1])
+	plt.savefig("analytics/individual_students/{name}.png".format(name=name))
+	plt.close()
+
+for i in range(0,user_number):
+	userplot(i)
 
 def wholeclassplot():
 	"""Plots the results of the whole class"""
@@ -46,9 +54,11 @@ def wholeclassplot():
 			x_list.append(i)
 		plt.scatter(x_list, responselist)
 		plt.plot(x_list, responselist)
-	plt.show()
+	plt.savefig("analytics/wholeclassplot.png")
+	plt.close()
 
 def averagesclass():
+	"""Plots the average of the class"""
 	listofresults=[]
 	for i in range(0,user_number):
 		current=list(map(function, data[i]["responses"]))
@@ -58,14 +68,25 @@ def averagesclass():
 
 		listofresults.append(current)
 
-	print(listofresults)
-
 	results= map(sum, zip(*listofresults))
-	print(results)
 	x_values=[]
 	for i in range(1,numquestions+1):
 		x_values.append(i)
 
 	plt.scatter(x_values, results)
 	plt.plot(x_values, results)
-	plt.show()
+
+	plt.ylim(0,user_number)
+	plt.xlim(0.5,numquestions+0.5)
+
+	plt.xticks(list(range(1,numquestions+1)))
+	plt.xlabel("Question Number")
+	plt.ylabel("Number of Students who got the question Correct")
+
+	plt.savefig("analytics/class_average.png")
+	plt.close()
+
+
+averagesclass()
+
+wholeclassplot()
