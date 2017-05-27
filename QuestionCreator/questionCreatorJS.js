@@ -3,7 +3,7 @@ function newQues(){
 	
 	//document.getElementById("1ans1").value = "Fifth Avenue, New York City";
 
-	alert("Running the correct version!");
+	//alert("Running the correct version!");
 
 	var challenge = document.createElement("input");
     challenge.name="challenge"+count;
@@ -59,6 +59,8 @@ function newQues(){
 	element.appendChild(formPlate);
 
 	
+
+
 	document.body.innerHTML +=" ";
 
 	//document.getElementById("newQuestionHere").innerHTML = "what does this do";-->
@@ -66,6 +68,11 @@ function newQues(){
 }
 
 function finish(){
+	
+	socket = io()
+	socket.emit('questions', questions)
+
+
 	alert("Done");
 	//var name = Document.-->
 
