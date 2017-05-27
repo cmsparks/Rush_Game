@@ -5,7 +5,7 @@ var nme = getParameterByName('nme');
 // Redirect the page
 if(gameId!=null&&nme!=null) {
 	console.log("sadaf");
-	window.location.replace("game/index.html?pin="+gameId+"&nme="+nme);
+	window.location.replace("../game/index.html?pin="+gameId+"&nme="+nme);
 }
 // Get parameters from the URL
 function getParameterByName(name, url) {

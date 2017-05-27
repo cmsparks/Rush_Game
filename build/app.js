@@ -1,5 +1,5 @@
 (function() {
-  var app, compression, express, helmet, http, io, players, questions, server, stage;
+  var app, compression, express, helmet, http, io, players, questions, server;
 
   helmet = require('helmet');
 
@@ -17,30 +17,29 @@
 
   questions = void 0;
 
-  players = void 0;
-
-  stage = 'prep';
+  players = [];
 
   app.use(helmet());
 
   app.use(compression());
 
-  app.get('/', function(req, res, next) {
-    if (stage === 'game') {
-      return res.redirect('/game/');
-    } else {
-      return next();
-    }
+  app.get('/', function(req, res) {
+    return res.redirect(303, 'student/login');
   });
 
   app.use(express["static"]('build/public'));
 
   io.on('connection', function(socket) {
     socket.on('questions', function(questions_) {
-      return questions = questions_;
+      questions = questions_;
+      return console.log('questions');
     });
-    return socket.on('players', function(players_) {
-      return players = players_;
+    socket.on('player', function(player) {
+      return players.push(player);
+    });
+    return socket.on('start', function() {
+      console.log('start');
+      return socket.emit('start');
     });
   });
 
