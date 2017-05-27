@@ -1,6 +1,8 @@
+var currPin = getParameterByName('pin');
+var currNme = getParameterByName('nme');
 
 function init() {
-	
+	connectToServer(currPin,currNme);
 }
 
 function connectToServer(pin, nme) {
@@ -23,4 +25,15 @@ function showOverlay(num) {
 		document.getElementById("overlay").style.background = "linear-gradient( to bottom right,rgba(63,81,181,1) 0%, rgba(171,71,188 ,1) 70%)"
 	}
 	document.getElementById("overlay").style.width="100%";
+}
+
+// Get parameters from the URL
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
