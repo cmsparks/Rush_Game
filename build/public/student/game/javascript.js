@@ -21,7 +21,7 @@ if(currName===null)
 }
 
 function init() {
-	connectToServer(currPin,currName);
+	// connectToServer(currPin,currName);
 }
 
 function question(question) {
@@ -32,6 +32,7 @@ function question(question) {
 			random_value = Math.floor(Math.random() * 4) 
 			if (values[random_value] === false) {
 				values[random_value] = true
+				console.log(i, question.choices[i])
 				setAnswer(i, question.choices[i])
 				break
 			}	
@@ -70,7 +71,7 @@ function setPlace(place) {
 
 function selectQues(num) {
 	showOverlay(num);
-	if (questions[current_question].indexOf(questions[current_question].choices[num]) !== -1) {
+	if (questions[current_question].correct.indexOf(questions[current_question].choices[num]) !== -1) {
 		console.log(1)
 	} 
 	current_question += 1
