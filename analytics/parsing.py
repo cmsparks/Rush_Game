@@ -87,8 +87,6 @@ def averagesclass():
 	plt.savefig("analytics/class_average.png")
 	plt.close()
 
-
-
 def hardestquestions():
 	"""Finds the hardest Questions"""
 	listofresults=[]
@@ -104,7 +102,24 @@ def hardestquestions():
 	print(results)
 
 	for i in range(0,len(results)):
-		resultsdict["Question #{}".format(i+1)]=results[i]
+		resultsdict[i]=results[i]
 
 	resultsdict = OrderedDict(sorted(resultsdict.items(), key=lambda x: x[1]))
 	return resultsdict
+
+	# resultsdict is a dictionary of
+
+questions=open('pseudo_data/questions.json')
+questionsdata= json.load(questions)
+
+questionsdata=questionsdata["data"]
+
+outfile=open('analytics/outfile.txt','w')
+
+dictionaryofthings= hardestquestions()
+
+for i in dictionaryofthings:
+	outfile.write(str(questionsdata[i]["name"]))
+	outfile.write("\n")
+	outfile.write(str(dictionaryofthings[i])+ " People got it right")
+	outfile.write("\n \n")
