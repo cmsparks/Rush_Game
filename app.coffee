@@ -167,6 +167,5 @@ io.on 'connection', (socket) ->
   socket.on 'start_thing', ->
     start = true
     # socket.broadcast.emit('first_question')
-    socket.broadcast.emit('questions', questions)
-
-
+    socket.broadcast.emit('questions', questions)  
+    socket.broadcast.emit('players', players)

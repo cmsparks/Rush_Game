@@ -92,7 +92,8 @@
     });
     return socket.on('start_thing', function() {
       start = true;
-      return socket.broadcast.emit('questions', questions);
+      socket.broadcast.emit('questions', questions);
+      return socket.broadcast.emit('players', players);
     });
   });
 

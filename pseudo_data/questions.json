@@ -13,112 +13,112 @@
       ]
     },
     {
-      "name": "question",
+      "name": "What is a question?",
       "choices": [
-        "a",
-        "b",
-        "c",
-        "d"
+        "Good Questions`",
+        "Mice Meme",
+        "Joke les go",
+        "wHaT Is A QuEsTiOn"
       ],
       "correct": [
-        "a"
+        "wHaT Is A QuEsTiOn"
       ]
     },
     {
-      "name": "question2",
+      "name": "When did the United States declare independence from great Britain?",
       "choices": [
-        "a",
-        "b",
-        "c",
-        "d"
+        "July 4th, 1776",
+        "June 5th, 1777",
+        "July 5th, 1776",
+        "We are still Great Britain"
       ],
       "correct": [
-        "a"
+        "July 4th, 1776"
       ]
     },
 
     {
-      "name": "question3",
+      "name": "What is Anton's Last Name?",
       "choices": [
-        "a",
-        "b",
-        "c",
-        "d"
+        "Of the Ducks",
+        "Of the Pigs",
+        "Of the Bovines",
+        "Of the Rabits"
       ],
       "correct": [
-        "a"
+        "Of the Ducks"
       ]
     },
     {
-      "name": "question4",
+      "name": "Who started Silk Road",
       "choices": [
-        "a",
-        "b",
-        "c",
-        "d"
+        "Dread Pirate Roberts",
+        "Captain hook",
+        "Peter Pan",
+        "Anton"
       ],
       "correct": [
-        "a"
+        "Dread Pirate Roberts"
       ]
     },
     {
-      "name": "question5",
+      "name": "Who created Git as a Joke?",
       "choices": [
-        "a",
-        "b",
-        "c",
-        "d"
+        "Linux Torvalds",
+        "Linus Torvalds",
+        "Linus Torvadls",
+        "Linus Thorvalds"
       ],
       "correct": [
-        "a"
+        "Linus Torvalds"
       ]
     },
     {
-      "name": "question6",
+      "name": "What is the best High School in Chicago",
       "choices": [
-        "a",
-        "b",
-        "c",
-        "d"
+        "Whitney Young",
+        "Lane Tech",
+        "Jones",
+        "Northside"
       ],
       "correct": [
-        "a"
+        "Lane Tech"
       ]
 },
     {
-      "name": "question7",
+      "name": "Who is the Current President of the USA?",
       "choices": [
-        "a",
-        "b",
-        "c",
-        "d"
+        "Donald Trump",
+        "Barack Obama",
+        "Kelyanne Conway",
+        "Vladimir Putin"
       ],
       "correct": [
-        "a"
+        "Donald Trump"
       ]
     },
     {
-      "name": "question8",
+      "name": "Does France have a Prime Minister or a Presdient?",
       "choices": [
-        "a",
-        "b",
-        "c",
-        "d"
+        "Neither. They have a napoleon.",
+        "Both",
+        "President",
+        "Prime Minister"
       ],
       "correct": [
-        "a"
+        "Both"
       ]
     },
     {
-      "name": "question9",
+      "name": "How many days in a row has Jeremy worn Pajama Pants?",
       "choices": [
-        "a",
-        "b",
-        "c",
-        "d"
+        "5",
+        "1",
+        "3",
+        "7"
       ],
       "correct": [
-        "a"
+        "5"
       ]
     }
   ]

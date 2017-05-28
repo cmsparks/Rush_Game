@@ -3,7 +3,7 @@
     {
       "name": "Misha",
       "current_index": 10,
-      "responses": [false, false, false, false, false, false, false, false, false, false]
+      "responses": [true, false, false, false, true, false, false, false, false, false]
     },
     {
       "name": "Antoshka",
@@ -13,7 +13,7 @@
     {
       "name": "Bill",
       "current_index": 8,
-      "responses": [true, true, false, false, true, true, false, true]
+      "responses": [true, true, true, false, true, true, true, true]
     },
     {
       "name": "Bill O-reilly",

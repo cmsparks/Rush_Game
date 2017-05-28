@@ -25,11 +25,13 @@ function init() {
 	// connectToServer(currPin,currName);
 }
 
+
 function update() {
 	qindex += 1
 	questions[qindex].choices = shuffle(questions[qindex].choices)
 	console.log(questions)
 	question(questions[qindex])
+	socket.broadcast.emit('students', currPin)
 	closeOverlay()
 }
 
