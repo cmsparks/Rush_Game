@@ -15,7 +15,51 @@
 
   io = require('socket.io')(server);
 
-  questions = {};
+  questions = {
+    "data": [
+      {
+        "name": "What is a man?",
+        "choices": ["a creature", "a woman", "a pinapple", "rollsy"],
+        "correct": ["a creature"]
+      }, {
+        "name": "question",
+        "choices": ["a", "b", "c", "d"],
+        "correct": ["a"]
+      }, {
+        "name": "question2",
+        "choices": ["a", "b", "c", "d"],
+        "correct": ["a"]
+      }, {
+        "name": "question3",
+        "choices": ["a", "b", "c", "d"],
+        "correct": ["a"]
+      }, {
+        "name": "question4",
+        "choices": ["a", "b", "c", "d"],
+        "correct": ["a"]
+      }, {
+        "name": "question5",
+        "choices": ["a", "b", "c", "d"],
+        "correct": ["a"]
+      }, {
+        "name": "question6",
+        "choices": ["a", "b", "c", "d"],
+        "correct": ["a"]
+      }, {
+        "name": "question7",
+        "choices": ["a", "b", "c", "d"],
+        "correct": ["a"]
+      }, {
+        "name": "question8",
+        "choices": ["a", "b", "c", "d"],
+        "correct": ["a"]
+      }, {
+        "name": "question9",
+        "choices": ["a", "b", "c", "d"],
+        "correct": ["a"]
+      }
+    ]
+  };
 
   players = [];
 
@@ -40,9 +84,6 @@
   app.use(express["static"]('build/public'));
 
   io.on('connection', function(socket) {
-    socket.on('questions', function(questions_) {
-      return questions = questions_;
-    });
     socket.on('player', function(player) {
       if (!start) {
         players.push(player);

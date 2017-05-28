@@ -7,7 +7,132 @@ app = express()
 server = app.listen process.env.PORT or 3004
 io = require('socket.io') server
 
-questions = {}
+questions = {
+  "data": [
+    {
+      "name": "What is a man?",
+      "choices": [
+        "a creature",
+        "a woman",
+        "a pinapple",
+        "rollsy"
+      ],
+      "correct": [
+        "a creature"
+      ]
+    },
+    {
+      "name": "question",
+      "choices": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct": [
+        "a"
+      ]
+    },
+    {
+      "name": "question2",
+      "choices": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct": [
+        "a"
+      ]
+    },
+
+    {
+      "name": "question3",
+      "choices": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct": [
+        "a"
+      ]
+    },
+    {
+      "name": "question4",
+      "choices": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct": [
+        "a"
+      ]
+    },
+    {
+      "name": "question5",
+      "choices": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct": [
+        "a"
+      ]
+    },
+    {
+      "name": "question6",
+      "choices": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct": [
+        "a"
+      ]
+  },
+    {
+      "name": "question7",
+      "choices": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct": [
+        "a"
+      ]
+    },
+    {
+      "name": "question8",
+      "choices": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct": [
+        "a"
+      ]
+    },
+    {
+      "name": "question9",
+      "choices": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correct": [
+        "a"
+      ]
+    }
+  ]
+}
+
 players = []
 start = false
 
@@ -29,8 +154,8 @@ io.on 'connection', (socket) ->
   # # , 1000)
   # console.log(start)
 
-  socket.on 'questions', (questions_) ->
-    questions = questions_
+  # socket.on 'questions', (questions_) ->
+  #   questions = questions_
     # console.log('questions')
 
   socket.on 'player', (player) ->

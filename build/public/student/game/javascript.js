@@ -3,7 +3,9 @@ socket = io.connect(window.location.origin)
 questions = undefined
 current_question = 0
 socket.on('questions', function (questions_) {
-	questions = questions_
+	questions = questions_.data
+	console.log(questions)
+	question(questions[0])
 })
 
 var currPin = getParameterByName("pin")
@@ -20,8 +22,6 @@ if(currName===null)
 
 function init() {
 	connectToServer(currPin,currName);
-	question(questions[0])
-
 }
 
 function question(question) {
@@ -46,7 +46,6 @@ function connectToServer(pin, nme) {
 }
 
 function setQuestion(ques) {
-	document.getElementById("questionText").innerHTML = ques;
 	document.getElementById("quesText").innerHTML = ques;
 }
 
@@ -71,7 +70,11 @@ function setPlace(place) {
 
 function selectQues(num) {
 	showOverlay(num);
-
+	if (questions[current_question].indexOf(questions[current_question].choices[num]) !== -1) {
+		console.log(1)
+	} 
+	current_question += 1
+	question(questions[current_question])
 }
 
 function showOverlay(num) {
