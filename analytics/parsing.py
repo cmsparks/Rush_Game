@@ -31,8 +31,8 @@ def userplot(user_place):
 	for i in range(1, index+1):
 		x_list.append(i)
 
-	plt.scatter(x_list, responselist)
 	plt.plot(x_list, responselist, 'r-')
+	plt.scatter(x_list, responselist)
 	plt.xticks(list(range(1, numquestions)))
 	plt.ylim(-0.25, 1.25)
 	plt.yticks([0,1])
@@ -88,5 +88,4 @@ def averagesclass():
 
 
 averagesclass()
-
 wholeclassplot()
