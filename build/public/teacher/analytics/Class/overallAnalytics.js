@@ -1,6 +1,6 @@
 function init() {
 	var data;
-	$.getJSON("../../../../../analytics/hardness_ranking.json", function(json) {
+	$.getJSON("hardness_ranking.json", function(json) {
 		data=json;
 		for(var key in data) {
 			document.getElementById("questionInfo").innerHTML = document.getElementById("questionInfo").innerHTML+data[key]+" people got \""+key+"\" correct.<br>";
