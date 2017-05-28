@@ -85,6 +85,7 @@ for(var cat =0, max = finalInputs.length; cat<max; cat++){
 }
 ///////////////////////////////////////////
 function finish(){
+  // alert('test')
 	console.log("finishing");
 	var everythingDictionary = {};
 	var questionDictionary = {};
@@ -147,13 +148,13 @@ function finish(){
 	}//end for loop
 	finalDictionary["data"]=finalArray;
 	// json = JSON.stringify(everythingDictionary);
-
-	socket = io()
+  // alert('eafasdfasjklads;jfiias')
+	socket = io()  
   console.log(1)
 	socket.emit('questions', finalDictionary)
 
 
-	//alert("Done");
+	// alert("Done");
 	//var name = Document.-->
 }
 }

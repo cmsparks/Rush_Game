@@ -11,11 +11,11 @@
 
   app = express();
 
-  server = app.listen(process.env.PORT || 3000);
+  server = app.listen(process.env.PORT || 3004);
 
   io = require('socket.io')(server);
 
-  questions = void 0;
+  questions = {};
 
   players = [];
 
@@ -26,24 +26,32 @@
   app.use(compression());
 
   app.get('/', function(req, res) {
-    return res.redirect(303, 'student/login');
+    return res.redirect(303, '/student/login');
+  });
+
+  app.get('/student/game', function(req, res, next) {
+    if (start) {
+      return res.redirect(303, '/student/no_entry');
+    } else {
+      return next();
+    }
   });
 
   app.use(express["static"]('build/public'));
 
   io.on('connection', function(socket) {
     socket.on('questions', function(questions_) {
-      questions = questions_;
-      return console.log('questions');
+      return questions = questions_;
     });
     socket.on('player', function(player) {
       if (!start) {
-        return players.push(player);
+        players.push(player);
       }
+      return socket.emit('player_success');
     });
-    return socket.on('start', function() {
+    return socket.on('start_thing', function() {
       start = true;
-      return socket.emit('start', questions);
+      return socket.broadcast.emit('questions', questions);
     });
   });
 

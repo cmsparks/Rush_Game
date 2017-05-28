@@ -1,3 +1,11 @@
+
+socket = io.connect(window.location.origin)
+questions = undefined
+current_question = 0
+socket.on('questions', function (questions_) {
+	questions = questions_
+})
+
 var currPin = getParameterByName("pin")
 var currName = getParameterByName("nme")
 
@@ -12,6 +20,23 @@ if(currName===null)
 
 function init() {
 	connectToServer(currPin,currName);
+	question(questions[0])
+
+}
+
+function question(question) {
+	setQuestion(question.name)
+	values = [false, false, false, false]
+	for (i = 0; i < 4; i++) {
+		while (true) {
+			random_value = Math.floor(Math.random() * 4) 
+			if (values[random_value] === false) {
+				values[random_value] = true
+				setAnswer(i, question.choices[i])
+				break
+			}	
+		}
+	}
 }
 
 function connectToServer(pin, nme) {
@@ -44,6 +69,7 @@ function setPlace(place) {
 
 function selectQues(num) {
 	showOverlay(num);
+
 }
 
 function showOverlay(num) {
