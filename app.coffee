@@ -9,6 +9,7 @@ io = require('socket.io') server
 
 questions = undefined
 players = []
+start = false
 
 app.use helmet()
 app.use compression()
@@ -22,8 +23,10 @@ io.on 'connection', (socket) ->
     console.log('questions')
 
   socket.on 'player', (player) ->
-    players.push(player)
+    if not start
+      players.push(player)
 
   socket.on 'start', ->
-    console.log('start')
-    socket.emit 'start'
+    start = true
+    socket.emit 'start', questions
+

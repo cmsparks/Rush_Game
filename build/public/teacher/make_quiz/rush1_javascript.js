@@ -146,11 +146,11 @@ function finish(){
      	}
 	}//end for loop
 	finalDictionary["data"]=finalArray;
-	console.log(finalDictionary);
-	json = JSON.stringify(everythingDictionary);
+	// json = JSON.stringify(everythingDictionary);
 
-	//socket = io()
-	//socket.emit('questions', questions)
+	socket = io()
+  console.log(1)
+	socket.emit('questions', finalDictionary)
 
 
 	//alert("Done");

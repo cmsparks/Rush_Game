@@ -1,5 +1,5 @@
 (function() {
-  var app, compression, express, helmet, http, io, players, questions, server;
+  var app, compression, express, helmet, http, io, players, questions, server, start;
 
   helmet = require('helmet');
 
@@ -19,6 +19,8 @@
 
   players = [];
 
+  start = false;
+
   app.use(helmet());
 
   app.use(compression());
@@ -35,11 +37,13 @@
       return console.log('questions');
     });
     socket.on('player', function(player) {
-      return players.push(player);
+      if (!start) {
+        return players.push(player);
+      }
     });
     return socket.on('start', function() {
-      console.log('start');
-      return socket.emit('start');
+      start = true;
+      return socket.emit('start', questions);
     });
   });
 
