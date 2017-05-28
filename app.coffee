@@ -167,5 +167,10 @@ io.on 'connection', (socket) ->
   socket.on 'start_thing', ->
     start = true
     # socket.broadcast.emit('first_question')
-    socket.broadcast.emit('questions', questions)  
+    socket.broadcast.emit('questions', questions)
     socket.broadcast.emit('players', players)
+  socket.on 'players2', (users)->
+    console.log('p2 received')
+    socket.broadcast.emit('players3', users)
+  socket.on 'students', (currpin)->
+    socket.broadcast.emit('students', currpin)

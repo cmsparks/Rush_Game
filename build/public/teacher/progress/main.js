@@ -1,16 +1,24 @@
+data = []
 socket = io();
-socket.on('students', function (uid) {
-  pos = getPos(uid)
-  userpos[pos] += 1;
-  setUserProgress((userpos[pos] + 1) * 10, pos)
-})
-socket.on('players', function (players) {
+userpos = [];
+cu = false
+socket.on('players3', function (players) {
+  console.log("received player data")
   data = players
 })
-userpos = [];
-for (i = 0; i < data.length; i++) {
-  userpos.push(0);
-}
+socket.on('students', function (pos) {
+  if (userpos[pos]) {
+    userpos[pos] += 1;
+  }
+  else {
+    userpos[pos] = 1;
+  }
+  setUserProgress((userpos[pos] + 1) * 10, pos)
+  if (!cu) {
+    create_users()
+    cu = true;
+  }
+})
 function getPos(uid) {
   for (i = 0; i < data.length; i++) {
     if (data[i].id == uid) {
@@ -19,10 +27,13 @@ function getPos(uid) {
   }
   return -1;
 }
-function update(uid) {
-  pos = getPos(uid)
+function update(pos) {
   userpos[pos] += 1;
   setUserProgress((userpos[pos] + 1) * 10, pos)
+  if (!cu) {
+    create_users()
+    cu = true;
+  }
 }
 
 function create_users() {
@@ -63,5 +74,7 @@ function create_users() {
 }
 //set prog to a value 1-100 and set user to a index in the array of stuff
 function setUserProgress(prog,user) {
-  document.getElementById("bar"+user).style.width = prog+"%";
+  if (document.getElementById("bar"+user)) {
+      document.getElementById("bar"+user).style.width = prog+"%";
+  }
 }

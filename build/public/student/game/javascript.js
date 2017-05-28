@@ -1,4 +1,4 @@
-
+data = []
 socket = io()
 questions = []
 correct_answer = 0
@@ -7,6 +7,11 @@ socket.on('questions', function (questions_) {
 	questions = questions_.data
 	console.log(questions, questions_.data)
 	update()
+})
+socket.on('players', function (players) {
+  console.log("received player data")
+  data = players
+  socket.emit('players2', data)
 })
 
 var currPin = getParameterByName("pin")
@@ -31,7 +36,7 @@ function update() {
 	questions[qindex].choices = shuffle(questions[qindex].choices)
 	console.log(questions)
 	question(questions[qindex])
-	socket.broadcast.emit('students', currPin)
+	socket.emit('students', currPin)
 	closeOverlay()
 }
 
@@ -95,7 +100,7 @@ function selectQues(num) {
 		update()
 	} 
 	else {
-		setTimeout(selectQues, 3000);
+		
 	}
 }
 

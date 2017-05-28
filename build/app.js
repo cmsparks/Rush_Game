@@ -90,10 +90,17 @@
       }
       return socket.emit('player_success');
     });
-    return socket.on('start_thing', function() {
+    socket.on('start_thing', function() {
       start = true;
       socket.broadcast.emit('questions', questions);
       return socket.broadcast.emit('players', players);
+    });
+    socket.on('players2', function(users) {
+      console.log('p2 received');
+      return socket.broadcast.emit('players3', users);
+    });
+    return socket.on('students', function(currpin) {
+      return socket.broadcast.emit('students', currpin);
     });
   });
 
