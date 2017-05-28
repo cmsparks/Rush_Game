@@ -55,6 +55,10 @@ def wholeclassplot():
 			x_list.append(i)
 		plt.scatter(x_list, responselist)
 		plt.plot(x_list, responselist)
+	plt.xlabel("Question Number")
+	plt.ylabel("Correct/ Incorrect")
+	plt.yticks([0,1])
+	plt.xticks(range(0, numquestions+1))
 	plt.savefig("analytics/wholeclassplot.png")
 	plt.close()
 
@@ -114,7 +118,7 @@ questionsdata= json.load(questions)
 
 questionsdata=questionsdata["data"]
 
-outfile=open('analytics/outfile.txt','w')
+outfile=open('analytics/hardness_ranking.txt','w')
 
 dictionaryofthings= hardestquestions()
 
@@ -123,3 +127,6 @@ for i in dictionaryofthings:
 	outfile.write("\n")
 	outfile.write(str(dictionaryofthings[i])+ " People got it right")
 	outfile.write("\n \n")
+
+averagesclass()
+wholeclassplot()
