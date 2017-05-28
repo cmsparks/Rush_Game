@@ -88,7 +88,7 @@
       if (!start) {
         players.push(player);
       }
-      return socket.emit('player_success');
+      return socket.broadcast.emit('player_success', players);
     });
     return socket.on('start_thing', function() {
       start = true;

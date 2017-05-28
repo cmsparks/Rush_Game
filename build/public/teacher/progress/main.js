@@ -1,41 +1,25 @@
-//socket = io();
-//socket.on('students', update(uid))
-data = [
-    {
-      "name": "a",
-      "uid": 1,
-    },
-    {
-      "name": "b",
-      "uid": 2,
-    },
-    {
-      "name": "c",
-      "uid": 3,
-    },
-    {
-      "name": "d",
-      "uid": 4,
-    },
-    {
-      "name": "e",
-      "uid": 5,
-    }
-  ];
+socket = io();
+socket.on('students', update(uid))
+socket.on('player_success', update(players))
+function playerdata(players) {
+  data = players
+}
 userpos = [];
 for (i = 0; i < data.length; i++) {
-  userpos.push(3);
+  userpos.push(0);
 }
 function getPos(uid) {
   for (i = 0; i < data.length; i++) {
-    if (data[i].uid == uid) {
+    if (data[i].id == uid) {
       return i;
     }
   }
   return -1;
 }
 function update(uid) {
-  userpos[getPos(uid)] += 1;
+  pos = getPos(uid)
+  userpos[pos] += 1;
+  setUserProgress((userpos[pos] + 1) * 10, pos)
 }
 
 function create_users() {
