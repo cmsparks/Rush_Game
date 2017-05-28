@@ -35,7 +35,7 @@ def userplot(user_place):
 	plt.plot(x_list, responselist, 'r-')
 	plt.scatter(x_list, responselist)
 	plt.xticks(list(range(1, numquestions)))
-	plt.xlabel(str(name))
+	plt.xlabel(str(name), fontsize=20)
 	plt.ylim(-0.25, 1.25)
 	plt.yticks([0,1])
 	plt.savefig("analytics/individual_students/{name}.png".format(name=user_place))

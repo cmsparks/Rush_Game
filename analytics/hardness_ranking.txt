@@ -1,30 +1,30 @@
-question3
+What is Anton's Last Name?
 1 People got it right
  
-question6
+Does France have a Prime Minister or a Presdient?
 1 People got it right
  
-question8
+How many days in a row has Jeremy worn Pajama Pants?
 1 People got it right
  
-question9
-1 People got it right
- 
-question2
+What is the best High School in Chicago
 2 People got it right
  
-question4
-2 People got it right
+What is a question?
+3 People got it right
+ 
+When did the United States declare independence from great Britain?
+3 People got it right
+ 
+Who started Silk Road
+3 People got it right
+ 
+Who created Git as a Joke?
+3 People got it right
+ 
+Who is the Current President of the USA?
+3 People got it right
  
 What is a man?
-3 People got it right
- 
-question
-3 People got it right
- 
-question5
-3 People got it right
- 
-question7
-3 People got it right
+4 People got it right
  

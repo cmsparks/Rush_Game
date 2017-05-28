@@ -1,24 +1,12 @@
 
 socket = io()
 questions = []
-current_question = 0
+correct_answer = 0
+qindex = -1
 socket.on('questions', function (questions_) {
 	questions = questions_.data
 	console.log(questions, questions_.data)
-	// for (i = 0; i < questions_.data.length; i++) {
-	// 	questions[i].choices = {}
-	// 	for (i2 = 0; i2 < 4; i2++) {
-	// 		while (true) {
-	// 			random_value = Math.floor(Math.random() * 4) 
-	// 			if (questions[i].choices[random_value] === undefined) {
-	// 				questions[i].choices[random_value] = questions_.data[i].choices[i2]
-	// 				break
-	// 			}	
-	// 		}
-	// 	}
-	// }
-	console.log(questions)
-	question(questions[0])
+	update()
 })
 
 var currPin = getParameterByName("pin")
@@ -37,13 +25,39 @@ function init() {
 	// connectToServer(currPin,currName);
 }
 
+function update() {
+	qindex += 1
+	questions[qindex].choices = shuffle(questions[qindex].choices)
+	console.log(questions)
+	question(questions[qindex])
+	closeOverlay()
+}
+
 function question(question) {
 	setQuestion(question.name)
 	for (i = 0; i < 4; i++) {
-		setAnswer(i, question.choices[i])
+		setAnswer(i + 1, question.choices[i])
 	}
 }
 
+function shuffle(array) {
+  var currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 function connectToServer(pin, nme) {
 	document.getElementById("currPin").innerHTML = pin;
@@ -74,13 +88,13 @@ function setPlace(place) {
 }
 
 function selectQues(num) {
-	showOverlay(num);
-	console.log(questions[current_question], num)
-	if (questions[current_question].correct.indexOf(questions[current_question].choices[num - 1]) !== -1) {
-		console.log(1)
+	console.log(questions[qindex].choices.indexOf(questions[qindex].correct[0]));
+	if (num - 1 == questions[qindex].choices.indexOf(questions[qindex].correct[0])) {
+		update()
 	} 
-	current_question += 1
-	question(questions[current_question])
+	else {
+		setTimeout(selectQues, 3000);
+	}
 }
 
 function showOverlay(num) {
