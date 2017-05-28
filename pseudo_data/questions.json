@@ -35,7 +35,11 @@
       "correct": [
         "a"
       ]
+<<<<<<< HEAD
     },
+=======
+    }, 
+>>>>>>> 4849b1245d52f91dc9ca99148d9a2c6f57f578e5
     {
       "name": "question3",
       "choices": [
@@ -83,7 +87,11 @@
       "correct": [
         "a"
       ]
+<<<<<<< HEAD
     },
+=======
+    }
+>>>>>>> 4849b1245d52f91dc9ca99148d9a2c6f57f578e5
     {
       "name": "question7",
       "choices": [
@@ -95,7 +103,11 @@
       "correct": [
         "a"
       ]
+<<<<<<< HEAD
     },
+=======
+    }
+>>>>>>> 4849b1245d52f91dc9ca99148d9a2c6f57f578e5
     {
       "name": "question8",
       "choices": [
