@@ -7,6 +7,15 @@ html, body {
 	margin:0 0 0 0;
 	padding: 0 0 0 0;
 }
+#currQues {
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-family: 'Play',sans-serif;
+	font-size: 30pt;
+	color:black;
+	height:85%;
+}
 #overlayContainer {
 	display:table-cell;
 	vertical-align: middle;
@@ -78,6 +87,7 @@ html, body {
 	position: absolute;
 }
 .question {
+	display:table;
 	position: relative;
 	background-color: white;
 	margin: 5% 5% 5% 5%;
@@ -111,9 +121,7 @@ html, body {
 .ques {
 	overflow:hidden;
 	display: table;
-	padding: 5px 10px 5px 10px;
 	margin: 5% auto;
-	clear:none;
 	clear: both;
 	width: 95%;
 	height: 19%;

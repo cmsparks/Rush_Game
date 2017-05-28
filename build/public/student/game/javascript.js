@@ -12,7 +12,9 @@ if(currName===null)
 
 function init() {
 	connectToServer(currPin,currName);
+	setQuestion("Question 1: What is the color blue?");
 }
+
 
 function connectToServer(pin, nme) {
 	document.getElementById("currPin").innerHTML = pin;
@@ -20,7 +22,7 @@ function connectToServer(pin, nme) {
 }
 
 function setQuestion(ques) {
-	document.getElementById("currQues").innerHTML = ques;
+	document.getElementById("questionText").innerHTML = ques;
 }
 
 function setAnswer(num, ans) {
@@ -58,6 +60,11 @@ function showOverlay(num) {
 	}
 	document.getElementById("overlay").style.width="100%";
 	document.getElementById("overlayContainer").innerHTML = "Loading . . ."
+}
+
+function closeOverlay() {
+	document.getElementById("overlay").style.width="0%";
+	document.getElementById("overlayContainer").innerHTML = ""
 }
 
 function getParameterByName(name, url) {
