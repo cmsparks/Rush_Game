@@ -44,7 +44,7 @@ html, body {
 	display: table;
 }
 #quesFooter {
-	margin-top:92%;
+	position:absolute;
 	width:100%;
 	height:12%;
 	border-top: 2px solid #ccc;
@@ -53,6 +53,7 @@ html, body {
 	border-bottom-left-radius: 15px;
 }
 .gameInfo {
+	float: left;
 	display: table;
 	width: 50%;
 	height: 100%;
@@ -64,9 +65,7 @@ html, body {
 	font-size: 20pt;
 }
 .place {
-	position:absolute;
-	top:45%;
-	left:50%;
+	float:right;
 	width: 50%;
 	height: 100%;
 	display: table;

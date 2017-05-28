@@ -35,13 +35,15 @@ def userplot(user_place):
 	plt.plot(x_list, responselist, 'r-')
 	plt.scatter(x_list, responselist)
 	plt.xticks(list(range(1, numquestions)))
+	plt.xlabel(str(name))
 	plt.ylim(-0.25, 1.25)
 	plt.yticks([0,1])
-	plt.savefig("analytics/individual_students/{name}.png".format(name=name))
+	plt.savefig("analytics/individual_students/{name}.png".format(name=user_place))
 	plt.close()
 
 for i in range(0,user_number):
 	userplot(i)
+	plt.close()
 
 def wholeclassplot():
 	"""Plots the results of the whole class"""
@@ -135,6 +137,3 @@ for i in dictionaryofthings:
 x= simplejson.dumps(dict(dataquestions))
 j=open('analytics/hardness_ranking.json','w')
 j.write(x)
-
-averagesclass()
-wholeclassplot()
