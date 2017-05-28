@@ -8,11 +8,15 @@ var inputs = document.getElementsByTagName("input");
 	}
 	console.log(finalInputs);
 
+	var attributeText = "text-align:center; width: 50%;"
+
 	var challenge = document.createElement("input");
     challenge.name="challenge"+ count;
-    challenge.placeholder= "Question " +count+
-    " ";
+    challenge.placeholder= "Question " +count+" ";
+    challenge.setAttribute("style",attributeText);
+
     var questNumArea = document.createElement("p");
+    questNumArea.setAttribute("style","font-size:30px;");
     var oneNum = document.createElement("p");
     var twoNum = document.createElement("p");
     var threeNum = document.createElement("p");
@@ -21,6 +25,10 @@ var inputs = document.getElementsByTagName("input");
     var br = document.createElement("br");
 
     var questNumText = document.createTextNode("Question "+count+":");//
+    
+    
+
+
     var oneText = document.createTextNode("Correct Answer: ");
     var twoText = document.createTextNode("Answer 2: ");
     var threeText = document.createTextNode("Answer 3: ");
@@ -36,23 +44,28 @@ var inputs = document.getElementsByTagName("input");
 
 	var ansOne = document.createElement("input");
 	ansOne.name = count+"ans"+1;
-	 ansOne.placeholder= "Answer one";
+	ansOne.placeholder= "Correct Answer";
+	ansOne.setAttribute("style",attributeText);
 
 	var ansTwo = document.createElement("input");
 	ansTwo.name = count+"ans"+2;
-	ansTwo.placeholder= "Answer two";
+	ansTwo.placeholder= "Answer 2";
+	ansTwo.setAttribute("style",attributeText);
 
 	var ansThree = document.createElement("input");
 	ansThree.name = count+"ans"+3;
-	ansThree.placeholder= "Answer three";
+	ansThree.placeholder= "Answer 3";
+	ansThree.setAttribute("style",attributeText);
 
 	var ansFour = document.createElement("input");
 	ansFour.name = count+"ans"+4;
-	ansFour.placeholder= "Answer four";
+	ansFour.placeholder= "Answer 4";
+	ansFour.setAttribute("style",attributeText);
 
 	var ansTag = document.createElement("input");
 	ansTag.name = count+"ans";
 	ansTag.placeholder= "e.g. science, logs, etc";
+	ansTag.setAttribute("style",attributeText);
 
 	oneNum.appendChild(ansOne);
 	twoNum.appendChild(ansTwo);
@@ -62,6 +75,7 @@ var inputs = document.getElementsByTagName("input");
 
 	var formPlate = document.getElementById("form");
 	
+	//ansOne.setAttribute('style',"background-color: green;");
 
 	formPlate.appendChild(questNumArea);
 	formPlate.appendChild(challenge);
@@ -70,7 +84,7 @@ var inputs = document.getElementsByTagName("input");
 	formPlate.appendChild(threeNum);
 	formPlate.appendChild(fourNum);
 	formPlate.appendChild(tagNum);
-	formPlate.appendChild(br);
+	//formPlate.appendChild(br);
 
 	var element = document.getElementById("newQuestionHere");
 	element.appendChild(formPlate);
@@ -83,6 +97,7 @@ for(var cat =0, max = finalInputs.length; cat<max; cat++){
 	 inputs[cat].value=finalInputs[cat];
 	}
 }
+
 ///////////////////////////////////////////
 function finish(){
 	console.log("finishing");
