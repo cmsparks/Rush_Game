@@ -1,8 +1,9 @@
 var analyticsRoot = "../../../../../analytics/individual_students/"
 
 function init() {
-	for(i = 0; i )
+	for(i = 0; i ) {
 	createElem(analyticsRoot+i+".png",i)
+	}
 }
 function rdirPlayers() {
 	window.location.replace("../Class/analytics.html")

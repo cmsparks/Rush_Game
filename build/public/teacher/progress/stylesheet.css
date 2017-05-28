@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Play');
+body, html {
+	background:linear-gradient( to top right, rgba(251,192,40,1) 0%, rgba(51,77,253,1) 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+#userbar {
+}
+.progBar {
+	background-color: white;
+	width: 1600px;
+	height: 100px;
+	border-radius: 15px;
+	box-shadow: 2pt 2pt 20px 2pt #333;
+	margin: 2.5% auto;
+	font-family: 'Play',sans-serif;
+	font-size: 20pt;
+	display:table;
+	padding-left: 40px;
+}
+.playerName {
+	display: table-cell;
+	vertical-align: middle;
+	margin:3%;
+}
+.progressContainer {
+	display: table-cell;
+	vertical-align: center;
+	width: 1400px;
+	height: 30px;
+	background-color:red;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px; 
+}
+.prog {
+	background-color: green;
+	width:15%;
+	height:100%;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px; 
+}
