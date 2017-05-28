@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>page</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <form class="form">
+    <button type="a">A</button>
+    <button type="b">B</button>
+  </form>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+  <script>
+    $('.form').on('a', function () {
+      console.log(1)
+      return false
+    })
+    $('.form').on('b', function () {
+      console.log(2)
+      return false
+    })
+  </script>
+</body>
+</html>
