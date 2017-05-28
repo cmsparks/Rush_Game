@@ -2,6 +2,7 @@ import json
 from pprint import pprint
 import numpy as np
 import matplotlib.pyplot as plt
+from collections import OrderedDict
 
 data_file = open('pseudo_data/players.json')
 data = json.load(data_file)
@@ -87,5 +88,26 @@ def averagesclass():
 	plt.close()
 
 
-averagesclass()
-wholeclassplot()
+
+def hardestquestions():
+	"""Finds the hardest Questions"""
+	listofresults=[]
+	for i in range(0,user_number):
+		current=list(map(function, data[i]["responses"]))
+		a=len(current)
+		for i in range(0,numquestions-a):
+			current.append(0)
+
+		listofresults.append(current)
+	results= map(sum, zip(*listofresults))
+	resultsdict={}
+	print(results)
+
+	for i in range(0,len(results)):
+		resultsdict["Question #{}".format(i+1)]=results[i]
+	print(resultsdict)
+
+hardestquestions()
+
+questionsdata= open('pseudo_data/players.json')
+questions = json.load(questionsdata)
