@@ -36,6 +36,27 @@
 		form{
 			color: green;
 		}
+		
+		input[type=text]{
+			text-align:center;
+			width: 50%;
+		}
+		input[type=button]{
+			background-color:blue;
+			border:none;
+			color:white;
+
+		}
+		input[type=submit]{
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			padding: 16px 32px;
+		}
+		#QuestionID{
+			font-size:30px;
+		}
+		
 	</style>
 
 	<body>
@@ -44,38 +65,39 @@
 		<h3>Directions:</h3>
 		<p> Please type in your question and four possible answers. The first answer should be the correct answer. Please make sure that there are at least <mark>TWO</mark> questions.</p>
 		
-		<br>
+		
 		<div id="newQuestionHere">
-		<br>
+		
 		<form id="form">
 
-		Question 1: 
-		<br>
-		<input type="text" name="challenge1" placeholder = "Question 1"> 
-		<br>
-		<br>
-		Correct Answer: <input type = "text" name="1ans1" placeholder = "Answer one">
+		<p id="QuestionID">Question 1:</p> 
+		<input type="text" name="challenge1" placeholder = "Question 1" > 
 		<br>
 		<br>
-		Answer 2: <input type = "text" name="1ans2" placeholder = "Answer two">
+		Correct Answer: <input type = "text" name="1ans1" placeholder = "Correct Answer">
 		<br>
 		<br>
-		Answer 3: <input type = "text" name="1ans3" placeholder = "Answer three">
+		Answer 2: <input type = "text" name="1ans2" placeholder = "Answer 2">
 		<br>
 		<br>
-		Answer 4: <input type = "text" name="1ans4" placeholder = "Answer four">
+		Answer 3: <input type = "text" name="1ans3" placeholder = "Answer 3">
 		<br>
 		<br>
-		Tags: <input type = "text" name="1ans4" placeholder = "e.g. science, logs, etc">
+		Answer 4: <input type = "text" name="1ans4" placeholder = "Answer 4">
 		<br>
 		<br>
+		Tags: <input type = "text" name="1ans" placeholder = "e.g. science, logs, etc">
+		<br>
+		
 		</div>
+		<br>
 		<input type = "button" value = "Create new question" onClick ="newQues();">
 		<br>
 		<br>
 
 		<input type = "submit" value = "Submit" onClick="finish();">
 		</form>
+		<!--
 	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script>
 		$(function () {
@@ -86,5 +108,8 @@
 			})
 		})
 	</script>
+	-->
+	<br>
+	<br>
 	</body>
 </html>
