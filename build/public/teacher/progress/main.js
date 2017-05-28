@@ -1,17 +1,9 @@
-socket = io();
-
-data = undefined
-
-socket.on('students', function (students) {
-  data = students
-  userpos = [];
-  for (i = 0; i < data.length; i++) {
-    userpos.push(0);
-  }
-  create_users()
-})
-
-
+//socket = io();
+//socket.on('students', update(uid))
+userpos = [];
+for (i = 0; i < data.length; i++) {
+  userpos.push(3);
+}
 function getPos(uid) {
   for (i = 0; i < data.length; i++) {
     if (data[i].uid == uid) {
@@ -23,8 +15,6 @@ function getPos(uid) {
 function update(uid) {
   userpos[getPos(uid)] += 1;
 }
-// socket.get('result', update(uid));
-
 
 function create_users() {
   for (i = 0; i < data.length; i++) {
