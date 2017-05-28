@@ -1,7 +1,7 @@
 socket = io();
 userpos = [];
 for (i = 0; i < data.length; i++) {
-	userpos.push(3);
+	userpos.push(0);
 }
 function getPos(uid) {
 	for (i = 0; i < data.length; i++) {
