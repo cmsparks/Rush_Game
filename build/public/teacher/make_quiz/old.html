@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Question Creator</title>
+		<script src="rush1_javascript.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+	<body>
+		<h2>WELCOME!</h2>
+		<h1>Question Creator</h1>
+		<h3>Directions:</h3>
+		<p> Please type in your question and four possible answers. The first answer should be the correct answer. Please make sure that there are at least <mark>TWO</mark> questions.</p>
+		
+		<br>
+		<div id="newQuestionHere">
+		<br>
+		<form id="form">
+
+		Question 1: 
+		<br>
+		<input type="text" name="challenge1" placeholder = "Question 1"> 
+		<br>
+		<br>
+		Correct Answer: <input type = "text" name="1ans1" placeholder = "Answer one">
+		<br>
+		<br>
+		Answer 2: <input type = "text" name="1ans2" placeholder = "Answer two">
+		<br>
+		<br>
+		Answer 3: <input type = "text" name="1ans3" placeholder = "Answer three">
+		<br>
+		<br>
+		Answer 4: <input type = "text" name="1ans4" placeholder = "Answer four">
+		<br>
+		<br>
+		Tags: <input type = "text" name="1ans4" placeholder = "e.g. science, logs, rocks, etc">
+		<br>
+		<br>
+		</div>
+		<input type = "button" value = "Create new question" onClick ="newQues();">
+		<br>
+		<br>
+		</form>
+		<form id="submit_form" action="../start">
+			<input type = "submit" value = "submit" onClick ="finish();">
+			<!-- <input type = "submit" value = "Submit"> -->
+		</form>
+	<!-- <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>	    
+<!-- 	<script>
+		$(function () {
+			$('#submit_form').submit(function() {
+				console.log(1)
+				finish()
+				return false
+			})
+		})
+	</script>
+ -->	</body>
+</html>
