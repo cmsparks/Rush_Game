@@ -39,13 +39,15 @@ function question(question) {
 	}
 }
 
+
 function connectToServer(pin, nme) {
 	document.getElementById("currPin").innerHTML = pin;
 	document.getElementById("currName").innerHTML = nme;
 }
 
 function setQuestion(ques) {
-	document.getElementById("currQues").innerHTML = ques;
+	document.getElementById("questionText").innerHTML = ques;
+	document.getElementById("quesText").innerHTML = ques;
 }
 
 function setAnswer(num, ans) {
@@ -84,6 +86,11 @@ function showOverlay(num) {
 	}
 	document.getElementById("overlay").style.width="100%";
 	document.getElementById("overlayContainer").innerHTML = "Loading . . ."
+}
+
+function closeOverlay() {
+	document.getElementById("overlay").style.width="0%";
+	document.getElementById("overlayContainer").innerHTML = ""
 }
 
 function getParameterByName(name, url) {

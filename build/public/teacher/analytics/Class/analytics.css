@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Play');
+html, body {
+	margin: 0 0 0 0;
+	height: 100%;
+	width: 100%;
+	background:linear-gradient( to top right, rgba(251,192,40,1) 0%, rgba(51,77,253,1) 100%);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+#rightContainer {
+	width: 50%;
+	height: 80%;
+	background-color: white;
+}
+#content {
+	width:100%;
+	height:80%;
+}
+img {
+	max-width: 100%;
+	max-height: 100%;
+	margin:  auto;
+}
+#leftContainer {
+	height: 100%;
+	width:50%;
+	font-family: 'Play',sans-serif;
+	text-align: center;
+}
+#averageContainer {
+	height:48.5%;
+	padding:1.5%;
+	width:450px;
+	background-color:white;
+	border-radius:15px;
+	box-shadow: 2pt 2pt 20px 2pt #333;
+	margin: 3.5% auto;
+}
+#plotContainer {
+	height:48.5%;
+	margin:3.5%;
+	padding:1.5%;
+	width:450px;
+	background-color:white;
+	border-radius:15px;
+	box-shadow: 2pt 2pt 20px 2pt #333;
+	margin: 0 auto;
+}
+#container {
+	width: 100%;
+	height: 100%;
+}
+#header {
+	width:100%;
+	height:6%;
+	font-family: 'Play',sans-serif;
+	font-size: 30pt;
+	color: white;
+	padding: 1% 1.5% 0% 1.5%;
+}
+#classTab {
+	width:45%;
+	height:100%;
+	float:left;
+	background-color:#ffffff;
+	display: table;
+	margin-right: 5%;
+	border-radius: 20px;
+	border: 3px solid white;
+	color:black;
+}
+#playersTab {
+	width:45%;
+	margin-left: 1.5%;
+	height:100%;
+	display:table;
+	border-radius: 20px;
+	border: 3px solid white;
+	transition:.5s;
+}
+#playersTab:hover {
+	background-color: white;
+	color:black;
+}
+#playersTabText {
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+#classTabText {
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
