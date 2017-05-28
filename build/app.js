@@ -88,11 +88,12 @@
       if (!start) {
         players.push(player);
       }
-      return socket.broadcast.emit('player_success', players);
+      return socket.emit('player_success');
     });
     return socket.on('start_thing', function() {
       start = true;
-      return socket.broadcast.emit('questions', questions);
+      socket.broadcast.emit('questions', questions);
+      return socket.broadcast.emit('players', players);
     });
   });
 

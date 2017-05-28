@@ -1,9 +1,12 @@
 socket = io();
-socket.on('students', update(uid))
-socket.on('player_success', update(players))
-function playerdata(players) {
+socket.on('students', function (uid) {
+  pos = getPos(uid)
+  userpos[pos] += 1;
+  setUserProgress((userpos[pos] + 1) * 10, pos)
+})
+socket.on('players', function (players) {
   data = players
-}
+})
 userpos = [];
 for (i = 0; i < data.length; i++) {
   userpos.push(0);
