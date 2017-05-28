@@ -23,11 +23,15 @@ function create_users() {
     	document.getElementById("userbar").appendChild(node);
     	for (k = 0; k < userpos[i]; k++) {
     		var img = document.createElement("img");
-			img.src = "#";
+			img.src = "../../../../iconthing2.png";
+			img.height = 32
+			img.width = 32
 			document.getElementById("userbar").appendChild(img);
     	}
     	var img = document.createElement("img");
-		img.src = "#";
+		img.src = "../../../../iconthing.png";
+		img.height = 32
+		img.width = 32
 		document.getElementById("userbar").appendChild(img);
     }
 }
