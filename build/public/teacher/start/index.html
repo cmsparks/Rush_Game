@@ -17,10 +17,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
     <script>
       $(function () {
-        socket = io()
+        socket = io.connect(window.location.origin)
       })
       $('.form').submit(function () {
-        socket.emit('start')
+        socket.emit('start_thing')
       })
     </script>
   </body>
