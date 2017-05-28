@@ -18,7 +18,23 @@ function update(uid) {
 
 function create_users() {
   for (i = 0; i < data.length; i++) {
-    var node = document.createElement("P");
+    //Set up elements
+    var progBar = document.createElement("DIV");
+    var name = document.createElement("SPAN");
+    var progBarContainer = document.createElement("DIV");
+    var prog = document.createElement("DIV");
+    progBar.setAttribute("class","progBar");
+    progBar.setAttribute("id","mainBar"+i);
+    name.setAttribute("class","playerName");
+    progBarContainer.setAttribute("class","progressContainer");
+    prog.setAttribute("class","prog");
+    prog.setAttribute("id","bar"+i);
+    name.innerHTML = data[i].name;
+    progBar.appendChild(name);
+    progBarContainer.appendChild(prog);
+    progBar.appendChild(progBarContainer);
+    document.getElementById("userbar").appendChild(progBar);
+    /*var node = document.createElement("P");
       var textnode = document.createTextNode(data[i].name);
       node.appendChild(textnode);
       document.getElementById("userbar").appendChild(node);
@@ -33,8 +49,10 @@ function create_users() {
     img.src = "../../../../iconthing.png";
     img.height = 32
     img.width = 32
-    document.getElementById("userbar").appendChild(img);
+    document.getElementById("userbar").appendChild(img);*/
     }
-}  
-
-
+}
+//set prog to a value 1-100 and set user to a index in the array of stuff
+function setUserProgress(prog,user) {
+  document.getElementById("bar"+user).style.width = prog+"%";
+}
