@@ -85,7 +85,6 @@ var inputs = document.getElementsByTagName("input");
 	formPlate.appendChild(fourNum);
 	formPlate.appendChild(tagNum);
 	//formPlate.appendChild(br);
-
 	var element = document.getElementById("newQuestionHere");
 	element.appendChild(formPlate);
 
