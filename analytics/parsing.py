@@ -1,4 +1,4 @@
-import json
+import json, simplejson
 from pprint import pprint
 import numpy as np
 import matplotlib.pyplot as plt
@@ -122,11 +122,19 @@ outfile=open('analytics/hardness_ranking.txt','w')
 
 dictionaryofthings= hardestquestions()
 
+dataquestions=[]
+
 for i in dictionaryofthings:
 	outfile.write(str(questionsdata[i]["name"]))
 	outfile.write("\n")
 	outfile.write(str(dictionaryofthings[i])+ " People got it right")
 	outfile.write("\n \n")
+
+	dataquestions.append([str(questionsdata[i]["name"]),str(dictionaryofthings[i])])
+
+x= simplejson.dumps(dict(dataquestions))
+j=open('analytics/hardness_ranking.json','w')
+j.write(x)
 
 averagesclass()
 wholeclassplot()
