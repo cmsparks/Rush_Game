@@ -8,7 +8,6 @@ html, body {
 	padding: 0 0 0 0;
 }
 #currQues {
-<<<<<<< HEAD
 	display:table-cell;
 	vertical-align: middle;
 	text-align: center;
@@ -16,7 +15,6 @@ html, body {
 	font-size: 30pt;
 	color:black;
 	height:85%;
-=======
 	display:table;
 	width:100%;
 	height:80%;
@@ -27,7 +25,6 @@ html, body {
 	text-align: center;
 	font-size: 30pt;
 	font-family: 'Play', sans-serif;
->>>>>>> 4849b1245d52f91dc9ca99148d9a2c6f57f578e5
 }
 #overlayContainer {
 	display:table-cell;

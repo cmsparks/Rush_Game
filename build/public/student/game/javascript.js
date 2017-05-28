@@ -12,11 +12,7 @@ if(currName===null)
 
 function init() {
 	connectToServer(currPin,currName);
-<<<<<<< HEAD
 	setQuestion("Question 1: What is the color blue?");
-=======
-	setQuestion("Question 1:what is red")
->>>>>>> 4849b1245d52f91dc9ca99148d9a2c6f57f578e5
 }
 
 
@@ -26,11 +22,8 @@ function connectToServer(pin, nme) {
 }
 
 function setQuestion(ques) {
-<<<<<<< HEAD
 	document.getElementById("questionText").innerHTML = ques;
-=======
 	document.getElementById("quesText").innerHTML = ques;
->>>>>>> 4849b1245d52f91dc9ca99148d9a2c6f57f578e5
 }
 
 function setAnswer(num, ans) {
