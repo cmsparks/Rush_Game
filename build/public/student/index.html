@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>page</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <!-- <form class="form"> -->
+  <input type="button" value="finish" id='btn1'>
+  <input type="button" value="next question">
+  <!-- </form> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+  <script>
+    $('#btn1').submit(function () {
+      console.log(1)
+      return false
+    })
+    $('.form').on('b', function () {
+      console.log(2)
+      return false
+    })
+  </script>
+</body>
+</html>

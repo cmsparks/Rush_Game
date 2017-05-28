@@ -5,11 +5,36 @@
 		<script src="questionCreatorJS.js" type="text/javascript"></script>
 	</head>
 	<style>
-		*{
+		title{
+			color: black;
+		}
+		body{
+			background-color: #faf2e4;
+			margin:0 15%;
+			font-family: georgia;
+		}
+		h1{
 			text-align: center;
 			font-family: georgia;
-			color: white;
-			background-color: black;
+			font-weight: normal;
+			text-transform: uppercase;
+			border-bottom: 1px solid #57b1dc;
+			margin-top: 30px;
+			color:purple;
+		}
+		h2{
+			color: #d1633c;
+			font-size: 1em;
+			text-align: center;
+		}
+		h3{
+			color: orange;
+		}
+		p{
+			color: green;
+		}
+		form{
+			color: green;
 		}
 	</style>
 
@@ -17,19 +42,31 @@
 		<h2>WELCOME!</h2>
 		<h1>Question Creator</h1>
 		<h3>Directions:</h3>
-		<p> Please type in your question and four possible answers. The first answer should be the correct answer.</p>
+		<p> Please type in your question and four possible answers. The first answer should be the correct answer. Please make sure that there are at least <mark>TWO</mark> questions.</p>
+		
 		<br>
 		<div id="newQuestionHere">
 		<br>
-		<form id="form">Question 1: <input type="text" name="challenge1" placeholder = "Question"> 
+		<form id="form">
+
+		Question 1: 
+		<br>
+		<input type="text" name="challenge1" placeholder = "Question 1"> 
 		<br>
 		<br>
-		Answer 1: <input type = "text" name="1ans1" placeholder = "Answer one">
+		Correct Answer: <input type = "text" name="1ans1" placeholder = "Answer one">
+		<br>
+		<br>
 		Answer 2: <input type = "text" name="1ans2" placeholder = "Answer two">
 		<br>
 		<br>
 		Answer 3: <input type = "text" name="1ans3" placeholder = "Answer three">
+		<br>
+		<br>
 		Answer 4: <input type = "text" name="1ans4" placeholder = "Answer four">
+		<br>
+		<br>
+		Tags: <input type = "text" name="1ans4" placeholder = "e.g. science, logs, etc">
 		<br>
 		<br>
 		</div>

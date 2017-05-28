@@ -1,29 +1,27 @@
-{
-  "data": [
+data = [
     {
-      "name": "Misha",
+      "name": "a",
       "current_index": 10,
       "responses": [false, false, false, false, false, false, false, false, false, false]
     },
     {
-      "name": "Antoshka",
+      "name": "b",
       "current_index": 10,
       "responses": [true, true, true, false, false, true, false, true, false, false]
     },
     {
-      "name": "Bill",
+      "name": "c",
       "current_index": 8,
       "responses": [true, true, false, false, true, true, false, true]
     },
     {
-      "name": "Bill O-reilly",
+      "name": "d",
       "current_index": 3,
       "responses": [false, false, false]
     },
     {
-      "name": "Yoda",
+      "name": "e",
       "current_index": 10,
       "responses": [true, true, true, true, true, true, true, true, true, true]
     }
-  ]
-}
+  ];

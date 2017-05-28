@@ -1,0 +1,32 @@
+    title{
+      color: black;
+    }
+    body{
+      background-color: #faf2e4;
+      margin:0 15%;
+      font-family: georgia;
+    }
+    h1{
+      text-align: center;
+      font-family: georgia;
+      font-weight: normal;
+      text-transform: uppercase;
+      border-bottom: 1px solid #57b1dc;
+      margin-top: 30px;
+      color:purple;
+    }
+
+    h2{
+      color: #d1633c;
+      font-size: 1em;
+      text-align: center;
+    }
+    h3{
+      color: orange;
+    }
+    p{
+      color: green;
+    }
+    form{
+      color: green;
+    }
