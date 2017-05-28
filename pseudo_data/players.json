@@ -23,7 +23,7 @@
     {
       "name": "Yoda",
       "current_index": 10,
-      "responses": [true, true, true, true, true, true, true, true, true, true]
+      "responses": [true, false, true, true, true, true, true, true, true, true]
     }
   ]
 }

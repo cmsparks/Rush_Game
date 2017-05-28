@@ -8,12 +8,14 @@ html, body {
 	background-attachment:fixed;
 }
 #rightContainer {
-	width: 50%;
+	width: 40%;
 	height: 100%;
+	margin-top: 3.5%;
+	margin-right: 10%;
 	float:right;
+	display:table;
 }
 #questionInfo {
-	margin: 0 auto;
 	font-family: 'Play',sans-serif;
 	background-color: white;
 	margin: 3% auto;
@@ -21,6 +23,10 @@ html, body {
 	height:108%;
 	border-radius: 15px;
 	box-shadow: 2pt 2pt 20px 2pt #333;
+	font-size: 20pt;
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
 }
 #content {
 	width:100%;
