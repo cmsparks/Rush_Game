@@ -105,9 +105,6 @@ def hardestquestions():
 
 	for i in range(0,len(results)):
 		resultsdict["Question #{}".format(i+1)]=results[i]
-	print(resultsdict)
 
-hardestquestions()
-
-questionsdata= open('pseudo_data/players.json')
-questions = json.load(questionsdata)
+	resultsdict = OrderedDict(sorted(resultsdict.items(), key=lambda x: x[1]))
+	return resultsdict
