@@ -17,22 +17,25 @@ img {
 }
 #leftContainer {
 	height: 100%;
-	width:50%;
-	background-color: red;
+	width:450px;
 }
 #averageContainer {
 	height:48.5%;
 	margin:3.5%;
 	padding:1.5%;
 	width:92.5%;
-	background-color:green;
+	background-color:white;
+	border-radius:15px;
+	box-shadow: 2pt 2pt 20px 2pt #333;
 }
 #plotContainer {
 	height:48.5%;
 	margin:3.5%;
 	padding:1.5%;
 	width:92.5%;
-	background-color:green;
+	background-color:white;
+	border-radius:15px;
+	box-shadow: 2pt 2pt 20px 2pt #333;
 }
 #container {
 	width: 100%;
