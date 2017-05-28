@@ -12,6 +12,7 @@ if(currName===null)
 
 function init() {
 	connectToServer(currPin,currName);
+	setQuestion("Question 1:what is red")
 }
 
 function connectToServer(pin, nme) {
@@ -20,7 +21,7 @@ function connectToServer(pin, nme) {
 }
 
 function setQuestion(ques) {
-	document.getElementById("currQues").innerHTML = ques;
+	document.getElementById("quesText").innerHTML = ques;
 }
 
 function setAnswer(num, ans) {
