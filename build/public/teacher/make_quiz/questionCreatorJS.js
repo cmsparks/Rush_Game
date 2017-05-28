@@ -1,79 +1,175 @@
 var count = 2;
-function newQues(){
-	
-	//document.getElementById("1ans1").value = "Fifth Avenue, New York City";
+var finalInputs=[];
 
-	//alert("Running the correct version!");
+function newQues(){
+var inputs = document.getElementsByTagName("input");
+	for(var i = 0, max= inputs.length-2;i<max;i++){
+		 finalInputs[i]=inputs[i].value;
+	}
+	console.log(finalInputs);
 
 	var challenge = document.createElement("input");
-    challenge.name="challenge"+count;
-    //var qText = "Question "+count;
-
-    var questNumArea = document.createElement("p");//
+    challenge.name="challenge"+ count;
+    challenge.placeholder= "Question " +count+
+    " ";
+    var questNumArea = document.createElement("p");
     var oneNum = document.createElement("p");
     var twoNum = document.createElement("p");
     var threeNum = document.createElement("p");
     var fourNum = document.createElement("p");
+    var tagNum = document.createElement("p");
     var br = document.createElement("br");
+
     var questNumText = document.createTextNode("Question "+count+":");//
-    var oneText = document.createTextNode("Answer 1:");
-    var twoText = document.createTextNode("Answer 2:");
-    var threeText = document.createTextNode("Answer 3:");
-    var fourText = document.createTextNode("Answer 4:");
+    var oneText = document.createTextNode("Correct Answer: ");
+    var twoText = document.createTextNode("Answer 2: ");
+    var threeText = document.createTextNode("Answer 3: ");
+    var fourText = document.createTextNode("Answer 4: ");
+    var tagText = document.createTextNode("Tags: ");
+
     questNumArea.appendChild(questNumText);
     oneNum.appendChild(oneText);
     twoNum.appendChild(twoText);
     threeNum.appendChild(threeText);
     fourNum.appendChild(fourText);
+    tagNum.appendChild(tagText);
 
 	var ansOne = document.createElement("input");
 	ansOne.name = count+"ans"+1;
-	ansOne.value = "This is a test";
+	 ansOne.placeholder= "Answer one";
 
 	var ansTwo = document.createElement("input");
 	ansTwo.name = count+"ans"+2;
+	ansTwo.placeholder= "Answer two";
 
 	var ansThree = document.createElement("input");
 	ansThree.name = count+"ans"+3;
+	ansThree.placeholder= "Answer three";
 
 	var ansFour = document.createElement("input");
 	ansFour.name = count+"ans"+4;
+	ansFour.placeholder= "Answer four";
+
+	var ansTag = document.createElement("input");
+	ansTag.name = count+"ans";
+	ansTag.placeholder= "e.g. science, logs, etc";
+
+	oneNum.appendChild(ansOne);
+	twoNum.appendChild(ansTwo);
+	threeNum.appendChild(ansThree);
+	fourNum.appendChild(ansFour);
+	tagNum.appendChild(ansTag);
+
 	var formPlate = document.getElementById("form");
 	
 
-	formPlate.appendChild(questNumArea);//
+	formPlate.appendChild(questNumArea);
 	formPlate.appendChild(challenge);
-	//formPlate.appendChild(br);
 	formPlate.appendChild(oneNum);
-	formPlate.appendChild(ansOne);
 	formPlate.appendChild(twoNum);
-	formPlate.appendChild(ansTwo);
-	//formPlate.appendChild(br);
 	formPlate.appendChild(threeNum);
-	formPlate.appendChild(ansThree);
 	formPlate.appendChild(fourNum);
-	formPlate.appendChild(ansFour);
+	formPlate.appendChild(tagNum);
 	formPlate.appendChild(br);
 
 	var element = document.getElementById("newQuestionHere");
 	element.appendChild(formPlate);
 
-	
-
-
 	document.body.innerHTML +=" ";
 
-	//document.getElementById("newQuestionHere").innerHTML = "what does this do";-->
 	count++;
+
+for(var cat =0, max = finalInputs.length; cat<max; cat++){
+	 inputs[cat].value=finalInputs[cat];
+	}
 }
-
+///////////////////////////////////////////
 function finish(){
-	
-	socket = io()
-	socket.emit('questions', questions)
+	console.log("finishing");
+	var everythingDictionary = {};
+	var questionDictionary = {};
+	var choicesDictionary = {};
+	var correctDictionary = {};
+	var tagDictionary = {};
+	var choicesArray = [];
+	var correctArray = [];
+	var tagArray = [];
+	var finalArray = [];
+	var finalDictionary = {};
+	var inputs = document.getElementsByTagName("input");
+	if(inputs.length<7){
+		console.log("please enter at least two questions");
+		alert("Please enter at least two questions");
+	}
+	else{
+		console.log("question number ok");
+	for (var i=0, max=inputs.length; i < max-2; i++) { //Currently subtracting two because there are two buttons on the end, this may need to change later.
+     // Do something with the element here
+     //If mod 6=0; it's the question
+     //If mod 6=1; it's the correct answer
+     //Else its an incorrect answer
+     	//console.log(inputs[i].value);
+     	
+     	if(i%6===0){
+     		questionDictionary = {};
+     		choicesDictionary = {};
+     		correctDictionary = {};
+     		choicesArray = [];
+     		correctArray = [];
+     		everythingDictionary = {};
+     		tagArray = [];
+     		tagDictionary = {};
+     		questionDictionary["Name"] = inputs[i].value;
+     		//console.log(questionDictionary);
+     	}
+     	else if(i%6===1){
+     		choicesArray[0] = inputs[i].value;
+     		correctArray[0] = inputs[i].value;
+     		correctDictionary["correct_choices"] = correctArray;
+     		//console.log(correctDictionary);
+     	}
+     	else if(i%6===2){
+     		//choicesDictionary.push
+     		choicesArray[1] = inputs[i].value;
+     	}
+     	else if(i%6===3){
+     		choicesArray[2] = inputs[i].value;
+     	}
+     	else if(i%6===4){
+     		choicesArray[3] = inputs[i].value;
+     		choicesDictionary["choices"] = choicesArray;
+     		 
+     		//json = JSON.stringify(everythingDictionary);
+     	}
+     	else{
+     		var tags = inputs[i].value;
+     		tags = tags.replace(/\s/g, '');
+     		console.log(tags);
+     		tagArray = tags.split("\,");
+     		console.log(tagArray);
+     		tagDictionary["tags"] = tagArray;
+
+     		//console.log(questionDictionary);
+     		//console.log(correctDictionary);
+     		//console.log(choicesDictionary);
+     		console.log(tagDictionary);
+     		var temp = Object.assign({},questionDictionary,correctDictionary);
+     		var tempTwo = Object.assign({},temp,tagDictionary);
+     		everythingDictionary = Object.assign({},tempTwo,choicesDictionary);
+     		var len = finalArray.length;
+     		finalArray[len] = everythingDictionary;
+     		console.log(finalArray);
+     	}
+	}//end for loop
+	finalDictionary["data"]=finalArray;
+	console.log(finalDictionary);
+	json = JSON.stringify(everythingDictionary);
+
+	//socket = io()
+	//socket.emit('questions', questions)
 
 
-	alert("Done");
+	//alert("Done");
 	//var name = Document.-->
-
+}
 }
