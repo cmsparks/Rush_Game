@@ -1,9 +1,22 @@
 
-socket = io.connect(window.location.origin)
-questions = undefined
+socket = io()
+questions = []
 current_question = 0
 socket.on('questions', function (questions_) {
 	questions = questions_.data
+	console.log(questions, questions_.data)
+	// for (i = 0; i < questions_.data.length; i++) {
+	// 	questions[i].choices = {}
+	// 	for (i2 = 0; i2 < 4; i2++) {
+	// 		while (true) {
+	// 			random_value = Math.floor(Math.random() * 4) 
+	// 			if (questions[i].choices[random_value] === undefined) {
+	// 				questions[i].choices[random_value] = questions_.data[i].choices[i2]
+	// 				break
+	// 			}	
+	// 		}
+	// 	}
+	// }
 	console.log(questions)
 	question(questions[0])
 })
@@ -26,17 +39,8 @@ function init() {
 
 function question(question) {
 	setQuestion(question.name)
-	values = [false, false, false, false]
 	for (i = 0; i < 4; i++) {
-		while (true) {
-			random_value = Math.floor(Math.random() * 4) 
-			if (values[random_value] === false) {
-				values[random_value] = true
-				console.log(i, question.choices[i])
-				setAnswer(i, question.choices[i])
-				break
-			}	
-		}
+		setAnswer(i, question.choices[i])
 	}
 }
 
@@ -71,7 +75,8 @@ function setPlace(place) {
 
 function selectQues(num) {
 	showOverlay(num);
-	if (questions[current_question].correct.indexOf(questions[current_question].choices[num]) !== -1) {
+	console.log(questions[current_question], num)
+	if (questions[current_question].correct.indexOf(questions[current_question].choices[num - 1]) !== -1) {
 		console.log(1)
 	} 
 	current_question += 1
